@@ -44,10 +44,11 @@
          
           
 
-        - name: Upload APK artifact
-          uses: actions/upload-artifact@v4
-          with:
-            name: my-app-apk
-            path: app/build/outputs/apk/debug/app-debug.apk
+        - name: Change to app directory
+           :**  
+        - The error log: `No buildozer.spec found in the current directory. Abandon.`
+        - Workflow file     run: cd src
+        - name: Build APK
+          path: [.github/workflows/main.yml](https://github.com/abugorashy run: buildozer -v android debug
        
 
