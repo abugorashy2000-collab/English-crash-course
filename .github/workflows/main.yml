@@ -44,6 +44,22 @@
            fi
         - name: Set up working directory
           run: cd ${{ github.workspace }}
+
+
+
+        - name: Install Android SDK Build Tools
+          run: |
+           sdkmanager "build-tools;33.0.0"  # Use the required version for your project
+           sdkmanager --install "platform-tools"
+           sdkmanager --install "platforms;android-33"
+
+        - name: Set ANDROID_HOME
+          run: echo "ANDROID_HOME=$HOME/android-sdk" >> $GITHUB_ENV
+
+
+
+
+          
         - name: Build with Buildozer
           run: buildozer android debug
          
