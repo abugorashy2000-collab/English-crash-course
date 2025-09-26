@@ -75,6 +75,16 @@
         - name: Set up PATH for sdkmanager
           run: echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_PATH
 
+
+         # last cmmand below
+
+        - name: Download Android command line tools
+          run: wget https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip -O commandlinetools.zip
+
+        - name: Unzip command line tools
+          run: unzip commandlinetools.zip
+          
+
         - name: Unzip commandline tools
           run: unzip -o commandlinetools.zip -d $ANDROID_HOME
 
