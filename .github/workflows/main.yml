@@ -78,8 +78,7 @@
 
          # last cmmand below
 
-        - name: Unzip? [y]es, [n]o, [A]ll, [N]one, [r]ename:”). The command line tools
-          run: unzip -o commandlinetools.zip
+        
       
 
     #-----------
@@ -94,7 +93,8 @@
         - name: Unzip commandline tools
           run: unzip -o commandlinetools.zip -d $ANDROID_HOME
 
-
+        - name: Unzip? [y]es, [n]o, [A]ll, [N]one, [r]ename:”). The command line tools
+          run: unzip -o commandlinetools.zip
 
   
         - name: Set up Android SDK
