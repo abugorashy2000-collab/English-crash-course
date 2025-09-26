@@ -86,9 +86,7 @@
           run: |
             wget https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip -O commandlinetools.zip
 
-        - name: Unzip Android Command Line Tools
-          run: |
-            unzip commandlinetools.zip -d $ANDROID_SDK_ROOT/cmdline-tools 
+        #--------
 
         - name: Unzip Android command line tools
           run: unzip -o commandlinetools.zip
