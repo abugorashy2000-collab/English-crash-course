@@ -76,6 +76,16 @@
           run: echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_PATH
 
 
+        - name: Set up Android SDK
+          run: |
+           mkdir -p $ANDROID_HOME/cmdline-tools
+           cd $ANDROID_HOME/cmdline-tools
+           curl -o commandlinetools.zip https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+           unzip commandlinetools.zip -d latest
+           yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+
+        
+
         - name: Install Android SDK Build Tools
           run: |
            sdkmanager "build-tools;33.0.0"  # Use the required version for your project
