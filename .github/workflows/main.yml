@@ -78,11 +78,11 @@
 
          # last cmmand below
 
-        - name: Download Android command line tools
-          run: wget https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip -O commandlinetools.zip
+        - name: Unzip? [y]es, [n]o, [A]ll, [N]one, [r]ename:”). The command line tools
+          run: unzip -o commandlinetools.zip
+      
 
-        - name: Unzip command line tools
-          run: unzip commandlinetools.zip
+    #-----------
           
 
         - name: Unzip commandline tools
