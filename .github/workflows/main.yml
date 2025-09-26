@@ -79,15 +79,15 @@
 
 
 
-        - name: Install Android SDK Command line tools
+        - name: Install Android SDK Command Line Tools
           run: |
+           mkdir -p $ANDROID_HOME/cmdline-tools
+           cd $ANDROID_HOME/cmdline-tools
            wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O cmdline-tools.zip
            unzip cmdline-tools.zip
-           mkdir -p $HOME/android-sdk/cmdline-tools/latest
-           mv cmdline-tools/* $HOME/android-sdk/cmdline-tools/latest/
-           export ANDROID_HOME=$HOME/android-sdk
-           export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
-           sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "platforms;android-30"
+           mv cmdline-tools $ANDROID_HOME/cmdline-tools/latest     
+        - name: Add cmdline-tools to PATH
+          run: echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_PATH
 
 
 
