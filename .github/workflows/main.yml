@@ -67,7 +67,7 @@
           run: echo "ANDROID_HOME=$HOME/android-sdk" >> $GITHUB_ENV
         - name: Install Android Build Tools
           run: |
-           yes | $ANDROID_SDK_ROOT/tools/bin/sdkmanager --install "build-tools;34.0.0"
+           yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;34.0.0"
 
 
 
