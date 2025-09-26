@@ -75,7 +75,12 @@
         - name: Set up PATH for sdkmanager
           run: echo "$ANDROID_HOME/cmdline-tools/latest/bin" >> $GITHUB_PATH
 
+        - name: Unzip commandline tools
+          run: unzip -o commandlinetools.zip -d $ANDROID_HOME
 
+
+
+  
         - name: Set up Android SDK
           run: |
            mkdir -p $ANDROID_HOME/cmdline-tools
