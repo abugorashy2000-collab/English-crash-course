@@ -37,6 +37,12 @@
             wget https://dl.google.com/android/repository/build-tools_r33.0.2-linux.zip
             unzip build-tools_r33.0.2-linux.zip -d $HOME/android-sdk/build-tools
             export PATH=$HOME/android-sdk/build-tools/33.0.0:$PATH
+        - name: Set up working directory
+          run: cd ${{ github.workspace }}
+
+
+
+            
         - name: Generate buildozer.spec if missing
           run: |
            if [ ! -f buildozer.spec ]; then
